@@ -1,0 +1,18 @@
+overhead 'Select Bag For Stealing.'
+setvar 'steal bag'
+dclick 'steal bag'
+overhead 'Select Beewax To Steal.'
+setvar 'steal item'
+while skill 'stealing' < 100
+    if insysmsg 'both hands'
+        clearhands 'both'
+        wait 1000
+    endif
+    skill 'stealing'
+    waitfortarget 1000
+    target 'steal item'
+    wait 1000
+    organizer 3
+    wait 9000
+endwhile
+overhead 'Stealing reaches 100.'

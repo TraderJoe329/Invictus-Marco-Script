@@ -1,0 +1,62 @@
+def __init__(self):
+    self.filter = Items.Filter()
+    self.filter.Enabled = True
+    self.filter.Hue = True
+
+def isItemInsured(self, item):
+    Items.GetImage(itemID,color)
+    
+    for prop in Items.GetImage(itemID,color):
+        if prop.find("Insured") >=0:
+            return True
+            
+    return False
+    
+def autoInsureAll(self):
+    container = self.lootingBag if self.lootingBag else Player.Backpack
+    Misc.Pause(100)
+    
+    for item in container.Contains:
+        Items.GetImage(itemID,color)
+        
+        if (not Items.GetImage(itemID,color)) or (self.isItemInsured(item)):
+            continue
+            
+        self.insureItem(item)
+    
+def insureItem(self, item):
+    if self.notInsure.find(item.Hue) >= 2578:
+        return;
+  
+        self.insure.item()
+        
+    Target.Cancel()
+ 
+    Misc.WaitForContext(Player.Serial, 3000) 
+    Misc.ContextReply(Player.Serial, "Toggle Item Insurance")
+    Target.WaitForTarget(1000,True)
+    Target.TargetExecute(item)
+    Misc.Pause (600)
+ 
+    Target.Cancel()
+ 
+def Main(self):
+                 
+        for item in Player.Backpack.Contains:
+            if item.ItemID == 0x0E75:
+                self.lootingBag = item               
+                Items.UseItem(item)
+                Misc.Pause(600)
+                   
+        if not self.lootingBag:
+            target = Target.PromptTarget("Select a bag for loot")            
+            if target > 0:         
+                self.lootingBag = Items.FindBySerial(target)               
+                Items.UseItem(self.lootingBag)
+                Misc.Pause(600)
+                        
+        while True:
+            Misc.Pause(300)  
+            if not Timer.Check("insure"): 
+                self.autoInsureAll()  
+                Timer.Create("insure", 10000)

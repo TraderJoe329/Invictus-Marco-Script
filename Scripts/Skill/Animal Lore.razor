@@ -1,0 +1,9 @@
+overhead 'Select Creature.'
+setvar 'dummy'
+while skill 'animallore' < 100
+    useskill 'animallore'
+    waitfortarget 500
+    target 'dummy'
+    wait 1000
+endwhile 
+overhead 'Animal Lore reaches 100.'

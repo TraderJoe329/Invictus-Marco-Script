@@ -1,0 +1,34 @@
+if count 'Tinkering Tool' >= 3
+wait 500
+target 0x4000FF71
+wait 30000
+endif
+if count 'Iron' >= 31
+wait 500
+target 0x4000FF71
+wait 30000
+endif
+if count 'Iron' <= 0
+wait 500
+target 0x4000FF71
+wait 5000
+endif
+if count 'Tinkering Tool' <= 1
+wait 500
+target 0x4000FF71
+wait 5000
+endif
+if count 'Tinkering Tool' <= 1
+dclicktype '7864'
+waitforgump 3348360472
+gumpresponse 8
+waitforgump 3348360472
+gumpresponse 23
+waitforgump 3348360472
+endif
+dclicktype '7864'
+waitforgump 3348360472
+gumpresponse 15
+waitforgump 3348360472
+gumpresponse 9
+waitforgump 3348360472

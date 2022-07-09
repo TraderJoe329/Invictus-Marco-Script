@@ -1,0 +1,63 @@
+if skill 'Musicianship' >= 99
+if skill 'Peacemaking' >= 99
+skill 'Peacemaking'
+endif
+if skill 'Discordance' >= 99
+skill 'Discordance'
+endif
+if skill 'Provocation' >= 99
+skill 'Provocation'
+wait 300
+hotkey 'Next Non-Friendly Monster Target'
+wait 300
+lasttarget
+endif
+wait 300
+hotkey 'Target Closest Non-Friendly Monster'
+dclicktype '3762'
+wait 300
+hotkey 'Cancel Current Target'
+endif
+dclicktype '3617'
+waitfortarget
+hotkey 'Target Closest Friendly Monster'
+clearsysmsg
+wait 300
+if insysmsg 'you begin applying'
+wait 5000
+endif
+clearsysmsg
+hotkey 'Cancel Current Target'
+hotkey 'Target Closest Non-Friendly Monster'
+wait 300
+if insysmsg 'new target set.'
+hotkey 'Attack Last Target'
+clearsysmsg
+endif
+wait 300
+while poisoned
+hotkey '> Greater Heal/Cure Self'
+waitfortarget
+hotkey 'Target Self'
+wait 300
+endwhile
+if hits <= 60
+hotkey '> Greater Heal/Cure Self'
+waitfortarget
+hotkey 'Target Self'
+wait 300
+endif
+clearsysmsg
+hotkey 'Cancel Current Target'
+# Loot Treasure
+hotkey 'Restock Agent-09'
+wait 300
+targettype '3648'
+wait 1000
+if hp > 120
+hotkey 'Set Organizer HotBag-09'
+target 0x40375935
+endif
+hotkey 'Organizer Agent-09'
+wait 1000
+loop

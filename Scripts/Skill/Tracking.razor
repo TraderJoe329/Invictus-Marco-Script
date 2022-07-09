@@ -1,0 +1,14 @@
+while skill 'tracking' < 100
+skill 'Tracking'
+waitforgump 'any' 2000
+gumpresponse 4
+wait 1000
+if insysmsg 'You see no evidence'
+else  
+    waitforgump 'any' 2000
+    gumpresponse 1
+endif
+wait 11000
+clearjournal 
+endwhile
+overhead 'Tracking reaches 100.'

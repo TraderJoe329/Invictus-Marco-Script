@@ -1,0 +1,15 @@
+hotkey 'Set Last Target'
+wait 1500
+hotkey 'Next Humanoid Target'
+wait 1500
+if insysmsg 'new target set.'
+    for 2
+    guild 'Stranger?'
+    hotkey 'Recall'
+    wait 1500
+    //target 0x4096A3D8
+    target 0x40482CEC
+    endfor
+    stop
+endif   
+loop

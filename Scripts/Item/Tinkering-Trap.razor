@@ -1,0 +1,17 @@
+if insysmsg 'The world will save'
+    pause 35000
+endif
+clearsysmsg
+dclicktype 7864
+pause 500
+gumpresponse 50
+pause 500
+gumpresponse 2
+pause 1500
+target 0x40B76E55
+pause 500
+skill 'removetrap'
+pause 500
+target 0x40B76E55
+pause 500
+loop

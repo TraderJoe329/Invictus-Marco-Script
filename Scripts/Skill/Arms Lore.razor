@@ -1,0 +1,9 @@
+overhead 'Select Equipment.'
+setvar 'equip'
+while skill 'armslore' < 100
+    useskill 'armslore'
+    waitfortarget 500
+    target 'equip'
+    wait 1000
+endwhile 
+overhead 'Arms Lore reaches 100.'

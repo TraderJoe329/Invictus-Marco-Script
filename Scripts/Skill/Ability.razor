@@ -1,0 +1,29 @@
+clearsysmsg 
+if skill 'musicianship' > 99
+   dclicktype '4039'
+   stop
+elseif stam < 15
+    overhead 'Not enough stamina.'
+    stop
+endif
+if skill 'anatomy' > 99
+   hotkey 'Toggle Stun (Pre-AOS)'
+   pause 200
+   if insysmsg 'You decide'
+       overhead 'Stun: Off'
+       stop
+   else 
+       overhead 'Stun: On'
+       stop
+   endif
+elseif skill 'armslore' > 99
+    hotkey 'Toggle Disarm (Pre-AOS)'
+    pause 200
+    if insysmsg 'You decide'
+        overhead 'Disarm: Off'
+        stop
+    else 
+        overhead 'Disarm: Off'
+        stop
+    endif
+endif

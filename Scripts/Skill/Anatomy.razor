@@ -1,0 +1,9 @@
+overhead 'Select Creature.'
+setvar 'dummy'
+while skill 'anatomy' < 100
+    useskill 'anatomy'
+    waitfortarget 500
+    target 'dummy'
+    wait 1000
+endwhile 
+overhead 'Anatomy reaches 100.'
