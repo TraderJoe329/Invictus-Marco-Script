@@ -1,0 +1,6 @@
+//To regain partial stamina via eating a banana
+if stam < maxstam
+    dclicktype '5919' backpack
+else 
+    overhead 'Full Stamina.'
+endif
