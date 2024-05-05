@@ -1,0 +1,92 @@
+//This macro is for pvm tamers and it will repeat. You can use a separate macro/script with hotkey to quickly stop this.
+//This is for English version UO. You need to edit the content in -insysmsg- command for your language.
+//You need to bring reagents, bandages for vet/tamer and instruments if you have music skills
+//Auto Find & Attack Target
+clearsysmsg 
+hotkey 'Cancel Current Target'
+hotkey 'Clear Target Queue'
+say 'All Guard Me'
+hotkey 'Target Closest Non-Friendly'
+hotkey 'Target Closest Innocent Monster'
+wait 300
+if insysmsg 'new target set'
+virtue 'honor'
+waitfortarget 500
+lasttarget
+hotkey 'Attack Last Target'
+endif
+hotkey 'Cancel Current Target'
+hotkey 'Clear Target Queue'
+//Music Skills. Your char should only have one of these three skills: Peace/Discord/Provoke
+dclicktype '3741'
+wait 300
+if skill 'musicianship' >= 60
+if skill 'Peacemaking' >= 60
+skill 'Peacemaking'
+endif
+if skill 'Discordance' >= 60
+skill 'Discordance'
+endif
+if skill 'Provocation' >= 60
+skill 'Provocation'
+wait 300
+hotkey 'Next Non-Friendly Monster Target'
+hotkey 'Next Innocent Monster Target'
+wait 300
+lasttarget
+endif
+wait 300
+hotkey 'Target Closest Non-Friendly'
+hotkey 'Target Closest Innocent Monster'
+wait 300
+dclicktype '3741'
+//Use Instrument Tambourine. Buy from carpenter/bard or craft.
+hotkey 'Cancel Current Target'
+hotkey 'Clear Target Queue'
+endif
+clearsysmsg
+dclicktype '3617'
+waitfortarget 500
+hotkey 'Target Closest Friendly'
+wait 300
+if insysmsg 'That is too far away'
+say 'All Follow Me'
+wait 1000
+endif
+if insysmsg 'you begin applying'
+wait 5000
+endif
+hotkey 'Cancel Current Target'
+hotkey 'Clear Target Queue'
+clearsysmsg
+hotkey 'next friendly target'
+dclicktype '3617'
+waitfortarget 500
+lasttarget 
+wait 300
+if insysmsg 'you begin applying'
+wait 5000
+say 'All Guard Me'
+endif
+hotkey 'Cancel Current Target'
+hotkey 'Clear Target Queue'
+while poisoned ?? 0
+cast 'cure'
+waitfortarget 1000
+hotkey 'Target Self'
+wait 300
+endwhile
+if hits <= 70
+cast 'greater heal'
+waitfortarget 2000
+hotkey 'Target Self'
+wait 300
+endif
+clearsysmsg
+hotkey 'Cancel Current Target'
+hotkey 'Clear Target Queue'
+if skill 'magery' > 60
+cast 'magic reflection'
+wait 1000
+endif
+loop
