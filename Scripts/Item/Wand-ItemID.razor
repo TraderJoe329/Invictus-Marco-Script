@@ -1,0 +1,17 @@
+clearignore
+clearhands 'both'
+overhead 'Begin searching wand.' 2721
+for 50
+    if findtype 3570 backpack as 'wand' or findtype 3571 backpack as 'wand' or findtype 3572 backpack as 'wand' or findtype 3573 backpack as 'wand'
+    getlabel 'wand' 'spelltype'
+        if 'Identification' in 'spelltype'
+            dress 'wand'
+            overhead 'Found wand.'
+            dclick 'wand'
+            stop
+        else 
+            ignore 'wand'
+        endif 
+    endif
+endfor
+overhead 'Wand is not found.'
