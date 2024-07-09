@@ -1,0 +1,25 @@
+clearignore
+overhead 'Begin sorting wands.' 0
+while findtype 3570 backpack as 'wand' or findtype 3571 backpack as 'wand' or findtype 3572 backpack as 'wand' or findtype 3573 backpack as 'wand'
+    getlabel 'wand' 'spelltype'
+        lift 'wand'
+        pause 100
+        if 'Lightning' in 'spelltype'
+            drop 'chest_lightning'
+        endif
+        if 'Greater' in 'spelltype'
+            drop 'chest_greaterheal'
+        endif
+        if 'Mana' in 'spelltype'
+            drop 'chest_manadrain'
+        endif
+        if 'Identification' in 'spelltype'
+            drop 'chest_itemid'
+        endif
+        if 'Fireball' in 'spelltype'
+            drop 'chest_fireball'    
+        endif  
+        droprelloc 0 0
+        pause 100
+endwhile
+overhead 'Sorting is completed.'
