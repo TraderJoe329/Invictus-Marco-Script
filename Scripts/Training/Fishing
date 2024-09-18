@@ -31,17 +31,17 @@ skill 'Hiding'
 wait 9000
 dclicktype '3520'
 waitfortarget
-targetrelloc 3 -4
+targetrelloc 4 -4
 skill 'Hiding'
 wait 9000
 dclicktype '3520'
 waitfortarget
-targetrelloc -3 3
+targetrelloc -4 4
 skill 'Hiding'
 wait 9000
 dclicktype '3520'
 waitfortarget
-targetrelloc 3 3
+targetrelloc 4 4
 skill 'Hiding'
 wait 9000
 endfor
