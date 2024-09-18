@@ -1,0 +1,48 @@
+//Sail to ocean area where you can keep going one direction and never hit the land
+say 'forward'
+skill 'Hiding'
+wait 11000
+if weight >= 300
+dclicktype '3922'
+waitfortarget
+targettype '2508'
+wait 2000
+dclicktype '3922'
+waitfortarget
+targettype '2509'
+wait 2000
+dclicktype '3922'
+waitfortarget
+targettype '2511'
+wait 2000
+dclicktype '3922'
+waitfortarget
+targettype '2510'
+wait 2000
+endif
+say 'stop'
+skill 'Hiding'
+wait 1500
+for 6
+dclicktype '3520'
+waitfortarget
+targetrelloc -4 -4
+skill 'Hiding'
+wait 9000
+dclicktype '3520'
+waitfortarget
+targetrelloc 3 -4
+skill 'Hiding'
+wait 9000
+dclicktype '3520'
+waitfortarget
+targetrelloc -3 3
+skill 'Hiding'
+wait 9000
+dclicktype '3520'
+waitfortarget
+targetrelloc 3 3
+skill 'Hiding'
+wait 9000
+endfor
+wait 3000
